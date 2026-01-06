@@ -1,0 +1,67 @@
+.flash-message {
+    display: inline-block;
+    position: fixed;
+    top: 70px;
+    right: 10px;
+
+    padding: 10px 15px;
+
+    background-color: rgb(255, 150, 50, 0.9);
+    color: #fff;
+    text-shadow: none;
+
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+}
+
+.flash-message.hide
+    {opacity:0;}
+
+.contact-content {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+
+.contact-title {
+    margin-bottom: 120px;
+    text-align: center;
+}
+
+.contact-welcome {
+    font-weight: bold;
+}
+
+.form {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+
+.form__button {
+    margin: 30px ;
+}
+
+.form__button--submit {
+    padding: 10px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: rgb(190, 225, 200);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.form__button--submit:hover {
+    opacity: 0.7
+}
+
+.form__button--submit:active {
+    transform: translateY(2px) scale(0.95);
+}

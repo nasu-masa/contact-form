@@ -1,0 +1,73 @@
+.header {
+    background: rgb(190, 225, 200);
+}
+
+.header__inner {
+    margin: 0 ;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.nav-list {
+    display: flex;
+    margin: 0;
+}
+
+.nav-list__login,
+.nav-list__contact,
+.nav-list__register {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.nav-list__login:hover,
+.nav-list__contact:hover,
+.nav-list__register:hover,
+.logout-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.logout-button {
+    padding: 0;
+    margin-right: 15px;
+    color: #fff;
+    background-color: rgb(190, 225, 200);;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+}
+
+
+body {
+    min-height: 100vw;
+    background-image: url('/img/forest.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 3px#000;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border: 1px solid #7e7e7e;
+    box-shadow: 0 0 8px rgba(0, 70, 20, 0.8);
+}
