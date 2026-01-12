@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="confirm__content">
+<div class="confirm__content">
     <div class="confirm__heading">
         <h2>お問い合わせ内容確認</h2>
     </div>
@@ -39,9 +39,7 @@
                 </tr>
             </table>
         </div>
-        <div class="form__button">
-            <button class="form__button-submit" type="submit">送信</button>
-        </div>
+        @include('parts.button', ['label'=> '送信'])
     </form>
-    </div>
+</div>
 @endsection

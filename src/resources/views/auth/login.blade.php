@@ -9,7 +9,7 @@
     <div class="login-form__heading">
         <h2>ログイン</h2>
     </div>
-    <form class="form" action="/login" method="post" >
+    <form class="form" action="/login" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -43,12 +43,10 @@
                 </div>
             </div>
         </div>
-        <div class="form__button" action="/login" method="post">
-            <button class="form__button--submit" type="submit">ログイン</button>
-        </div>
+        @include('parts.button', ['label'=> 'ログイン'])
     </form>
     <div class="register__link">
-        <a  class="register__link--submit" href="/register">会員登録はこちら</a>
+        <a class="register__link--submit" href="/register">会員登録はこちら</a>
     </div>
 </div>
 @endsection

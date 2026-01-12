@@ -13,21 +13,29 @@ use App\Http\Controllers\AuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// 認証不要
+Route::prefix('auth')->group(function () {
+    Route::get('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/register', [AuthController::class, 'store']);
 
-Route::middleware('auth')->group(function(){
-    Route::get('/', [AuthController::class, 'index']);
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'loginPost']);
 });
-Route::get('/register', [AuthController::class, 'register'])->name('register');
-Route::get('/login', [AuthController::class, 'login'])->name('login');
 
-Route::post('/register', [AuthController::class, 'store']);
-Route::post('/login', [AuthController::class, 'loginPost']);
-Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
+// 認証必要
+Route::middleware('auth')->group(function () {
+    Route::get('/', [AuthController::class, 'index']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
 
-
-Route::middleware('auth')->group(function(){
+// 認証必要
+Route::middleware('auth')->group(function () {
 Route::get('/contact', [ContactController::class, 'contact']);
 });
-Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
-Route::post('/contacts', [ContactController::class, 'store']);
+
+Route::prefix('contacts')->group(function () {
+// 認証不要
+    Route::post('/confirm', [ContactController::class, 'confirm']);
+    Route::post('/', [ContactController::class, 'store']);
+});
 

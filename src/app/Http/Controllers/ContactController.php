@@ -16,13 +16,24 @@ class ContactController extends Controller
     public function confirm(ContactRequest $request)
     {
         $contact = $request->only(['name', 'email', 'tel', 'content']);
+
+        $request->session()->put('contact_data', $contact);
+
         return view('confirm', compact('contact'));
     }
 
     public function store(ContactRequest $request)
     {
-        $contact = $request->only(['name', 'email', 'tel', 'content']);
+        if(!$request->session()->has('contact_data')) {
+            return redirect('/contact')->with('error', 'もう一度入力してください');
+        }
+
+        $contact = $request->session()->get('contact_data');
+
         Contact::create($contact);
+
+        $request->session()->forget('contact_data');
+
         return view('thanks');
     }
 

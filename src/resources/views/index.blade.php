@@ -11,16 +11,13 @@
 </h3>
 @endif
 
-
 <div class="contact-content">
     <div class="contact-title">
         <h1 class="contact-welcome">ようこそ Welcome</h1>
     </div>
     <div class="contact-item">
         <form class="form" action="/contact" method="get">
-            <div class="form__button">
-                <button type="submit" class="form__button--submit">お問い合わせ</button>
-            </div>
+            @include('parts.button', ['label' => 'お問い合わせ'])
         </form>
     </div>
 </div>
